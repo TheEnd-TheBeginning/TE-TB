@@ -1,0 +1,13 @@
+#!/bin/bash
+#Считывать с клавиатуры целые числа, пока не будет введено четное число. После этого вывести количество считанных чисел.
+echo "For exit print even number"
+count=0
+read some_d
+let p=$some_d%2
+while [ $p -ne 0 ]
+do
+	let count++
+	read some_d
+	let p=$some_d%2
+done
+echo $count
