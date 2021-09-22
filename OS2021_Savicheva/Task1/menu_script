@@ -1,0 +1,60 @@
+#!/bin/bash
+#Разработать скрипт на языке bash, осуществляющий вывод меню, состоящего из слелующих пунктов:
+#	текущий пользователь,
+#	объем используемой памяти,
+#	объем дискового пространства,
+#	список запущенных процессов,
+#	список процессов, запущенных текущим пользователем,
+#	системные дата и время,
+#	время запуска системы,
+#	выход.
+echo "Choose action:"
+echo "current user - print [cu]"
+echo "used memory - print [um]"
+echo "disk space - print [ds]"
+echo "running processes - print [rp]"
+echo "current user processes - print [cup]"
+echo "system date and time - print [sd]"
+echo "system start time - print [sst]"
+echo "exit - print [e]"
+while [ true ]
+do
+	read var
+	case $var in
+		"cu")
+			echo "Current user:" && whoami
+			;;
+		"um") 
+			echo "Used memory:"
+			free
+			;;
+		"ds")
+			echo "Disc space:"
+			df -ah
+			;;
+		"rp")
+			echo "Running processes:"
+			ps -x
+			;;
+		"cup")
+			echo "Current user processes:"
+			ps -u $UID
+			;;
+		"sd")
+			echo "System date and time:"
+			date
+			;;
+		"sst")
+			echo "System start time:"
+			who -b
+			;;
+		"e")
+			echo "exit"
+			break
+			;;
+		*)
+			echo "unknown"
+			;;
+	esac
+	echo "Choose action:"
+done
