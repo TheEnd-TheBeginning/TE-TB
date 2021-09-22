@@ -46,7 +46,7 @@ do
 			;;
 		"sst")
 			echo "System start time:"
-			who -b
+			uptime
 			;;
 		"e")
 			echo "exit"
