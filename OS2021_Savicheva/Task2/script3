@@ -1,0 +1,11 @@
+#!/bin/bash
+#Считывать строки с клавиатуры, пока не будет введена строка, содержащая вашу фамилию. После этого вывести последовательность считанных строк в виде одной строки.
+str=""
+cur_str=""
+echo "For exit print \"Savicheva\""
+while [ "$cur_str" != "Savicheva" ]
+do
+	str=$str$cur_str
+	read cur_str
+done
+echo $str
