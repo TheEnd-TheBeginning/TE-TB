@@ -1,3 +1,8 @@
 #!/bin/bash
+if [ -e $2 ]
+then
+	sudo rm $2
+	echo "File exist"
+fi
 gcc $1 -o $2
 ./$2
